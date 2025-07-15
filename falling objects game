@@ -1,0 +1,24 @@
+when green flag clicked
+forever
+    go to x: (pick random -240 to 240) y: 180
+    repeat until <y position = -170>
+        change y by -5
+        wait 0.1 seconds
+    end
+end
+
+when green flag clicked
+forever
+    if <touching [Player v]?> then
+        change [score v] by 1
+        go to x: (pick random -240 to 240) y: 180
+    end
+end
+
+when green flag clicked
+forever
+    if <y position < -170> then
+        broadcast [Game Over v]
+        stop all
+    end
+end
